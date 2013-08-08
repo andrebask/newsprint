@@ -1,0 +1,289 @@
+
+.img {
+   text-indent: 0;
+   margin-top: 0.7em;
+   margin-bottom: 0.7em;
+   text-align: center 
+}
+  
+.caption {
+   text-indent: 0;
+   margin-top: 0;
+   font-size: 90%;
+   margin-left: 0;
+   margin-bottom: +0 
+}
+  
+.list {
+   margin-left: 2em;
+   margin-top: 0.5em;
+   font-size: 100%;
+   text-indent: -1.4em 
+}
+  
+.toc {
+   text-indent: 0;
+   margin-left: 2.3em;
+   margin-top: 1em;
+   margin-bottom: 0;
+   text-align: left 
+}
+  
+.chaptitle {
+   font-size: 120%;
+   font-style: normal;
+   font-weight: normal;
+   text-indent: 0;
+   margin-left: +0;
+   margin-right: +0;
+   margin-top: 0;
+   margin-bottom: 25%;
+   text-align: left 
+}
+  
+.block2 {
+   margin-left: 2em;
+   margin-right: 2em;
+   margin-top: 0.4em;
+   margin-bottom: 0;
+   font-size: 100%;
+   text-indent: 0 
+}
+  
+.backhead1 {
+   font-size: 120%;
+   font-style: normal;
+   font-weight: normal;
+   text-indent: 0;
+   margin-left: +0;
+   margin-right: +0;
+   margin-top: 0;
+   margin-bottom: 25%;
+   text-align: left 
+}
+  
+.footnote1 {
+   text-indent: 1em;
+   font-size: 85%;
+   margin-top: 0.5em 
+}
+  
+.block {
+   margin-left: 2em;
+   margin-right: 2em;
+   margin-top: 1em;
+   margin-bottom: 0;
+   font-size: 100%;
+   text-indent: 0 
+}
+  
+.footnotea {
+   text-indent: 0;
+   font-size: 85%;
+   margin-left: 2.5em;
+   margin-right: 2.5em;
+   margin-top: 0.5em 
+}
+  
+.extract {
+   text-indent: 0;
+   margin-top: +0;
+   margin-left: 2em;
+   margin-bottom: +0 
+}
+  
+.bull {
+   text-indent: -0.8em;
+   font-size: 90%;
+   margin-left: 2.8em;
+   margin-top: 0 
+}
+  
+.indent3 {
+   text-indent: 2em;
+   margin-top: 1em;
+   margin-bottom: 0 
+}
+  
+.indent {
+   text-indent: 1em;
+   margin-top: 1em;
+   margin-bottom: +0 
+}
+  
+.dedication {
+   font-size: 100%;
+   font-style: italic;
+   font-weight: normal;
+   text-indent: 0;
+   margin-left: 0;
+   margin-right: +0;
+   margin-top: 40%;
+   margin-bottom: 0em;
+   text-align: right 
+}
+  
+.indent4 {
+   text-indent: 2em;
+   margin-top: 0.3em;
+   margin-bottom: 0 
+}
+  
+.footnote4 {
+   text-indent: 0.5em;
+   font-size: 85%;
+   margin-top: 0 
+}
+  
+.tochead {
+   font-size: 120%;
+   font-style: normal;
+   font-weight: normal;
+   text-indent: 0;
+   margin-left: +0;
+   margin-right: +0;
+   margin-top: 0;
+   margin-bottom: 25%;
+   text-align: left 
+}
+  
+.pagebreak {
+   page-break-before: always 
+}
+  
+.fronthead {
+   font-size: 120%;
+   font-style: normal;
+   font-weight: normal;
+   text-indent: 0;
+   margin-left: +0;
+   margin-right: +0;
+   margin-top: 0;
+   margin-bottom: 25%;
+   text-align: left 
+}
+  
+.chapnum {
+   font-size: 120%;
+   font-style: normal;
+   font-weight: normal;
+   text-indent: 0;
+   margin-left: +0;
+   margin-right: +0;
+   margin-top: 0;
+   margin-bottom: 0;
+   text-align: left 
+}
+  
+.footnote5 {
+   text-indent: 0;
+   font-size: 85%;
+   margin-left: 2.5em;
+   margin-right: 2.5em;
+   margin-top: 0 
+}
+  
+.list1 {
+   margin-left: 2em;
+   margin-top: 1em;
+   font-size: 100%;
+   text-indent: -1.5em 
+}
+  
+.backhead {
+   font-size: 120%;
+   font-style: normal;
+   font-weight: normal;
+   text-indent: 0;
+   margin-left: +0;
+   margin-right: +0;
+   margin-top: 0;
+   margin-bottom: 0;
+   text-align: left 
+}
+  
+.footnote3 {
+   text-indent: 0;
+   font-size: 85%;
+   margin-top: 1em 
+}
+  
+.footnote2 {
+   text-indent: 0;
+   font-size: 85%;
+   margin-left: 2.5em;
+   margin-right: 2.5em;
+   margin-top: 1em 
+}
+  
+.extract1 {
+   text-indent: 0;
+   margin-top: 1.5em;
+   margin-left: 2em;
+   margin-bottom: +0 
+}
+  
+.indent2 {
+   text-indent: 1em;
+   margin-top: 1.8em;
+   margin-bottom: 0 
+}
+  
+.extract2 {
+   text-indent: 0;
+   margin-top: 1em;
+   margin-left: 2em;
+   margin-bottom: +0 
+}
+  
+.block3 {
+   margin-left: 2em;
+   margin-right: 2em;
+   margin-top: 1.5em;
+   margin-bottom: 0;
+   font-size: 100%;
+   text-indent: 0 
+}
+  
+.footnote {
+   text-indent: 1em;
+   font-size: 85%;
+   margin-top: 0.5em 
+}
+  
+.noindent {
+   text-indent: 0 
+}
+  
+.block1 {
+   margin-left: 2em;
+   margin-right: 2em;
+   margin-top: 0;
+   margin-bottom: 0;
+   font-size: 100%;
+   text-indent: 0 
+}
+  
+.indent1 {
+   text-indent: 1em;
+   margin-top: 1.3em;
+   margin-bottom: 0.2em 
+}
+  
+.right {
+   text-indent: 0;
+   text-align: right;
+   margin-top: 0 
+}
+  
+.footline {
+   margin-top: 1em;
+   margin-bottom: 0.5em;
+   border-bottom: 0.05em solid;
+   width: 35% 
+}
+  
+sup {
+   font-size: 80% 
+}
+  

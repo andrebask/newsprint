@@ -1,0 +1,311 @@
+/* feltrinelli css */
+
+@font-face {
+  font-family : "DejaVuSerif";
+  font-weight : normal;
+  font-style: normal;
+  src : url(fonts/DejaVuSerif.ttf);
+}
+
+@font-face {
+  font-family : "DejaVuSerif";
+  font-weight : bold;
+  font-style: normal;
+  src : url(fonts/DejaVuSerif-Bold.ttf);
+}
+
+@font-face {
+  font-family : "DejaVuSerif";
+  font-weight : bold;
+  font-style: italic;
+  src : url(fonts/DejaVuSerif-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family : "DejaVuSerif";
+  font-weight : normal;
+  font-style: italic;
+  src : url(fonts/DejaVuSerif-Italic.ttf);
+}
+
+@font-face {
+  font-family : "DejaVuSans";
+  font-weight : normal;
+  font-style: normal;
+  src : url(fonts/DejaVuSans.ttf);
+}
+
+@font-face {
+  font-family : "DejaVuSans";
+  font-weight : bold;
+  font-style: normal;
+  src : url(fonts/DejaVuSans-Bold.ttf);
+}
+
+@font-face {
+  font-family : "DejaVuSans";
+  font-weight : bold;
+  font-style: italic;
+  src : url(fonts/DejaVuSans-BoldOblique.ttf);
+}
+
+@font-face {
+  font-family : "DejaVuSans";
+  font-weight : normal;
+  font-style: italic;
+  src : url(fonts/DejaVuSans-Oblique.ttf);
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "DejaVuSans";
+}
+
+p {
+    display: block;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em;
+    margin-right: 0em;
+    text-indent: 20pt !important;
+    text-indent: 20pt;
+}
+
+.bookTitle
+{
+    text-align: center !important;
+    text-indent: 0pt !important;
+    font-size: x-large !important;
+}
+
+.bookTitle.author
+{
+    font-variant: small-caps !important;
+    margin-top: 3em !important;
+}
+
+.bookTitle.title
+{
+    margin-top: 0.2em !important;
+    margin-bottom: 0em !important;
+}
+
+.bookTitle.subtitle
+{
+    font-size: smaller !important;
+}
+
+.fronteSpizio, .copyNotice
+{
+    font-size: medium;
+    /*margin-top: 6em;*/
+    margin-top: 10%;
+    text-align: center !important;
+    text-indent: 0pt;
+}
+
+h1
+{
+    font-size: large;
+    margin-bottom: 2em;
+    text-align: center;
+    font-weight: normal;
+}
+
+.corsivo
+{
+    font-style: italic;
+}
+
+.grassetto
+{
+    font-weight: bolder;    
+}
+
+.sottolineato {
+	text-decoration:underline;
+}
+
+.codice {
+	font-family: monospace;
+}
+
+.page-break
+{
+    page-break-before: always;
+}
+
+/* no decorazioni per link */
+a {
+    text-decoration: none;
+}
+
+/*
+h3 {
+    margin: 0 0 1ex 0;
+    text-align: center;
+    font-weight: normal;
+    font-size: smaller;
+}
+*/
+
+h3 {
+    margin: 2ex 0 1ex 0;
+    text-align: center; 
+    font-weight: normal;
+    font-size: 110%;
+}
+
+h4 {
+    margin: 1.5ex 0 1ex 0;
+    text-align: center; 
+    font-weight: normal;
+    font-size: 100%;
+}
+
+/* per sostituire <small> con <span class="small">*/
+.small {
+	font-size: 0.8em;
+}
+
+
+img {
+	max-width: 100%;
+}
+
+/*rightdedi = classe per elementi da allineare a destra quali citazione, didascalia, nomi autori ecc...*/
+
+.rightdedi{
+	width:45%;
+	padding-left:55%;
+	text-align: right;
+}
+
+.speciale {
+	padding: 5%;
+	font-size: 0.8em;
+	letter-spacing: 1.2em;
+	text-align: center;
+}
+
+p.capoverso {
+	margin-top: 2em;
+}
+
+p.small
+{
+    font-size: 0.9em;
+}
+
+blockquote
+{
+    margin: 1.0em;
+}
+
+.gapSopra
+{
+    margin-top: 1.0em;
+}
+
+.gapSotto
+{
+    margin-bottom: 1.0em;
+}
+
+.gapSinistra
+{
+    margin-left: 1.0em;
+}
+
+.nonIndenta
+{
+    text-indent: 0em;
+}
+
+.indentaNegativo
+{
+    text-indent: -1.0em;
+}
+
+.allDestra
+{
+    text-align: right;
+}
+
+.allCentro
+{
+    text-indent: 0em;
+    text-align: center;
+}
+
+.bordiBlocco
+{ 
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-top: solid;
+    border-bottom: solid;
+}
+
+.piuPiccolo {
+    font-size: smaller;
+}
+
+sup {
+   font-size: 65%
+}
+
+/* css per pagina titolo */
+#paginatitolo {
+  border: 1px solid black;
+  width: 100%;
+  margin-top:10%;
+  border-left: 0;
+  border-right: 0;
+  padding: 0;
+}
+.pttitolo{
+  text-align:left;
+  font-size: 1.5em;
+  margin: 0;
+  font-weight: bold;
+  display:block;
+}
+.ptautore{
+  text-align:left;
+  font-size: 1.5em;
+  margin: 0;
+  display:block;
+}
+.ptcura {
+  font-size:1.2em;
+  margin-top:1em;
+  display:block;
+}
+.ptdescrizione{
+  font-size: 1em;
+  text-indent: 0;
+  margin-top:1em;
+}
+.ptsinistro {
+  border-right: 1px solid black;
+  text-align: right;
+}
+.ptdestro{
+  padding-left:1em;
+}
+.ptfeltrinelli {
+  text-align: center;
+  font-size: 0.8em;
+  padding: 1em;
+  padding-top: 2em;
+}
+.ptdidascalia {
+  text-align: right;
+  font-size: 0.8em;
+  padding: 1em;
+  padding-top: 2em;
+  font-style: italic;
+}
