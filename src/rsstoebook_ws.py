@@ -1,12 +1,13 @@
-from OPMLData import OPMLReader
-from RSSData import RSSManager
-from RSSData import FeedManager
-from RSSData import DownloadedFeed
-from EPubData import EPubGenerator
-from PDFData import PDFGenerator
-from ArticleData import ArticleExtractor
-from bottle import Bottle, post, request, static_file
-import os.join, os.path
+from rsstoebook.OPMLData import OPMLReader
+from rsstoebook.RSSData import RSSManager
+from rsstoebook.RSSData import FeedManager
+from rsstoebook.RSSData import DownloadedFeed
+from rsstoebook.EPubData import EPubGenerator
+from rsstoebook.PDFData import PDFGenerator
+from rsstoebook.ArticleData import ArticleExtractor
+from bottle import Bottle, post, request, static_file, run
+from time import time
+import os
 
 version = '0.0.1'
 np = Bottle()
@@ -26,14 +27,15 @@ def opml(format):
 
 @np.post('/rss/<format:re:epub|pdf>')
 def rss(format):
-    feeds_urls = request.json.links
+    feeds_urls = [l[u'link'] for l in request.json[u'links']]
     feeds = RSSManager(feeds_urls).download_feeds()
     down_feeds = FeedManager(feeds).get_downloaded_feeds()
     return static_file(output(format, down_feeds), root='/tmp')
 
 @np.post('/page/<format:re:epub|pdf>')
 def page(format):
-    pages = request.json.links
+    print request.json
+    pages = [l[u'link'] for l in request.json[u'links']]
     items = []
     for url in pages:
         items.append({'link': url})
@@ -46,19 +48,19 @@ def page(format):
 
 def output(format, down_feeds):
     name = str(int(time()*1000000))
-    filename = os.join('/tmp', name)
+    filename = os.path.join('/tmp', name)
     if format == 'epub':
         name += '.epub'
-        filename += '.ebub'
         EPubGenerator(down_feeds).generate_epub(filename)
     elif format == 'pdf':
         name += '.pdf'
         filename += '.pdf'
         PDFGenerator(down_feeds).generate_pdf(filename)
+    print name
     return name
 
 def save_files(request):
-    save_path = os.join('/tmp',
+    save_path = '/tmp'
     upload = request.files
     files = []
     for file in upload:
@@ -70,3 +72,4 @@ def save_files(request):
         file.save(save_path)
     return files
 
+run(np, host='localhost', port=8080, debug=True)
