@@ -35,10 +35,7 @@ def rss(format):
 @np.post('/page/<format:re:epub|pdf>')
 def page(format):
     print request.json
-    pages = [l[u'link'] for l in request.json[u'links']]
-    items = []
-    for url in pages:
-        items.append({'link': url})
+    items = [{'link': l[u'link']} for l in request.json[u'links']]
     articles = []
     for item in items:
         articles.append(ArticleExtractor().get_article_from_item(item))
