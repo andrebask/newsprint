@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>artistName</key>
+	<string>Sam Williams</string>
+	<key>book-info</key>
+	<dict>
+		<key>cover-image-hash</key>
+		<string>C420A1AC44116F53377B180F74937AB4</string>
+		<key>cover-image-path</key>
+		<string>OEBPS/images/cover.jpg</string>
+		<key>package-file-hash</key>
+		<string>CD52980D8B6D49264A87467122E03ECC</string>
+		<key>publisher-unique-id</key>
+		<string>978-88-503-1122-4</string>
+		<key>unique-id</key>
+		<integer>-3352601513816216684</integer>
+	</dict>
+	<key>itemName</key>
+	<string>Codice Libero</string>
+	<key>playlistName</key>
+	<string>Codice Libero</string>
+	<key>sort-artist</key>
+	<string>WILLIAMS, SAM</string>
+	<key>sort-artist-status</key>
+	<integer>3</integer>
+</dict>
+</plist>

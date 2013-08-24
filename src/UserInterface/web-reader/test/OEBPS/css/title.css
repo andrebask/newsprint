@@ -1,0 +1,28 @@
+h2.capitolo-titolo {
+  line-height: 1.30em;
+  font-size: 1.25em;
+  margin: 0em;
+  margin-bottom: 1.00em;
+  text-align: center;
+  font-weight: normal;
+}
+h1.parte-numero {
+  line-height: 1.30em;
+  font-size: 1.25em;
+  font-weight: normal;
+  font-variant: small-caps;
+  margin-bottom: 1.20em;
+  text-align: center;
+  border-bottom-style: dotted;
+  border-width: 1px;
+
+}
+h5.parte-titolo {
+  line-height: 1.30em;
+  font-size: 1.25em;
+  font-weight: normal;
+  font-style: italic;
+  margin-top: 0.00em;
+  margin-bottom: 0.00em;
+  text-align: center;
+}

@@ -1,0 +1,45 @@
+<head>
+ <title>NewsPrint
+ <meta charset="UTF-8">
+ <link href="http://localhost:2000/static/css/app.css" rel="stylesheet">
+<body #newsprint .body>
+ <div .topbar>
+  <img src="http://localhost:2000/static/img/book_small.png" .logo>
+  <span .topbar_title>NewsPrint
+  <span .topbar_logout><a href="/logout">Logout</a>
+ <div .body_forms>
+   <div .forms>
+     <h2>RSS Feeds
+      <input .button form=feed type=submit formaction=genepub value=EPUB>
+      <input .button form=feed type=submit formaction=genpdf value=PDF>
+     $forall Feed title url site read _ <- feeds
+      <div .item>
+       <div .item_title>
+        <a href=#{url}><b>#{title}</b></a> #
+       <form method=post>
+        <input .button_x type=submit formaction=delete value=X>
+        <input type=hidden name=delete value=#{url}>
+        <input type=hidden name=type value=feed>
+       <div .item_site><b>#{site}</b> #
+       <div .item_date><b>#{show(read)}</b> #
+        <input .checkbox form=feed type=checkbox name=feed value=#{url}>
+     <input type=hidden name=type value=feed>
+ <div .body_forms>
+   <div .forms>
+     <h2>Bookmarks
+      <input .button form=link type=submit formaction=genepub value=EPUB>
+      <input .button form=link type=submit formaction=genpdf value=PDF>
+     $forall Link title url site _ saved <- links
+       <div .item>
+        <div .item_title>
+         <a href=#{url}><b>#{title}</b></a> #
+        <form method=post>
+         <input .button_x type=submit formaction=delete value=X>
+         <input type=hidden name=delete value=#{url}>
+         <input type=hidden name=type value=link>
+        <div .item_site><b>#{site}</b> #
+        <div .item_date><b>#{show(saved)}</b> #
+         <input .checkbox form=link type=checkbox name=link value=#{url}>
+     <input form=link type=hidden name=type value=link>
+  <form #feed method=post>
+  <form #link method=post>

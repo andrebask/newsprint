@@ -1,0 +1,12 @@
+/static StaticR Static getStatic
+
+/favicon.ico FaviconR GET
+/robots.txt RobotsR GET
+
+/                    HomeR     GET
+/session             SessionR      POST
+/register            RegisterR     POST
+/submit/#Text	     SubmitR	   POST
+/links/#Text         LinkR     GET
+/feeds/#Text         FeedR     GET
+/delete/#Text/#Text  DeleteR       POST

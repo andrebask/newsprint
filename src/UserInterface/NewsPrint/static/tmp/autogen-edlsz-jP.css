@@ -1,0 +1,131 @@
+html,body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url('http://localhost:2000/static/img/background.jpg');
+}
+.topbar {
+    text-align: left;
+    height: 42px;
+    font-family: Geneva,Tahoma,sans-serif;
+    font-size: 2em;
+    color: #d5d5d5;
+    background-color: #6c6d6f;
+    background-image: linear-gradient(#838686, #6c6d6f);
+    background-repeat: repeat-x;
+    position: relative;
+}
+.topbar_title {
+    position: absolute;
+    z-index: 900;
+    text-indent: 0.2em;
+    top: 0.05em;
+}
+.logo {
+    padding: 3px;
+    left: 16.5px;
+    top: 1px;
+}
+.body_text {
+    height: 100%;
+    float: left;
+    width: 50%;
+}
+.title {
+    font-family: Geneva,Tahoma,sans-serif;
+    text-shadow: 2px 2px grey;
+    color: white;
+    padding-top: 5%;
+    font-size: 1.5em;
+    text-indent: 0.7em;
+}
+.text {
+    font-family: Geneva,Tahoma,sans-serif;
+    text-shadow: 1.5px 1.5px grey;
+    color: white;
+    padding-top: 2%;
+    font-size: 1.1em;
+    margin-left: 1.1em;
+    margin-right: 0.7em;
+}
+.body_forms {
+    height: 100%;
+    float: right;
+    width: 50%;
+}
+.forms {
+    position: relative;
+    top: 25%;
+    height: 350px;
+    background-color: #6c6d6f;
+    color: #d5d5d5;
+    font-family: Geneva,Tahoma,sans-serif;
+    font-size: 1em;
+    text-shadow: 2px 2px darkslategray;
+    width: 450px;
+    left: 20%;
+    border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: medium;
+}
+.form_left {
+    float: left;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+form_left_title {
+    text-align: left;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    margin-left: 0.7em;
+}
+.input.l {
+    margin-top: 0.3em;
+}
+.button_layout_left {
+    text-align: left;
+    position: relative;
+}
+.button_left {
+    margin-top: 0.7em;
+    margin-left: 0.95em;
+    border-style: solid;
+}
+.form_right {
+    width: 50%;
+    height: 100%;
+    float: right;
+    background-color: #838686;
+}
+.form_right_title {
+    text-align: right;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    margin-right: 0.5em;
+}
+.input {
+    border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: medium;
+}
+.input.r {
+    float: right;
+    margin-right: 0.5em;
+}
+.input.r.pwd {
+    float: right;
+    margin-right: 0.5em;
+    margin-top: 0.3em;
+}
+.button_layout_right {
+    text-align: right;
+}
+.button_right {
+    margin-top: 0.7em;
+    margin-right: 0.5em;
+    border-style: solid;
+}

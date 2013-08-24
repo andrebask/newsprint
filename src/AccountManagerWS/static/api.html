@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>NewsPrint API</title>
+  </head>
+  <body id="newsprint">
+    <div class="body_text">
+      <div class="title">
+	<h1>NewsPrint API</h1>
+      </div>
+      <div class="text">
+	NewsPrint allows you to save on the cloud your favorite web contents and convert them to a format suitable for printing or reading on your ebook reader. With NewsPrint you can also read your favorite RSS feeds in EPUB or PDF format.
+      </div>
+      <table border="3">
+	<tr>
+	  <td>Method</td>
+	  <td>Route</td>
+	  <td>Description</td>
+	  <td>Input</td>
+	  <td>Output</td>
+	</tr>
+	<tr>
+	  <td>POST</td>
+	  <td>/register</td>
+	  <td>add a user to the database</td>
+	  <td>user data</td>
+	  <td></td>
+	</tr>
+	<tr>
+	  <td>POST</td>
+	  <td>/session</td>
+	  <td>create a new session</td>
+	  <td>user credentials</td>
+	  <td>user session id</td>
+	</tr>
+	<tr>
+	  <td>POST</td>
+	  <td>/delete/*item_type*/*sessionid*</td>
+	  <td>delete an item</td>
+	  <td>object to delete</td>
+	  <td></td>
+	</tr>
+	<tr>
+	  <td>POST</td>
+	  <td>/submit/*sessionid*</td>
+	  <td>add a link/feed to list of links/feeds</td>
+	  <td>title and  url of the item</td>
+	  <td></td>
+	</tr>
+	<tr>
+	  <td>GET</td>
+	  <td>/links/*sessionid*</td>
+	  <td>get the list of web pages saved by the user</td>
+	  <td></td>
+	  <td>a list of JSON Link objects</td>
+	</tr>
+	<tr>
+	  <td>GET</td>
+	  <td>/feeds/*sessionid*</td>
+	  <td>get the list of RSS feed urls saved by the user</td>
+	  <td></td>
+	  <td>a list of JSON Feed objects</td>
+	</tr>
+      </table>
+    </div>
+    <a href="javascript:try{var req = new XMLHttpRequest();req.open('GET', document.location, false);req.send(null);var header = req.getResponseHeader('content-type').toLowerCase();location.href='http://localhost:3000/submit?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href)+'&content='+header;}catch(err){location.href='http://localhost:2000/submit?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href)+'&content=null';}">prova bookmarklet GET</a>
+    <a href="javascript:(function () {var jsCode = document.createElement('script');jsCode.setAttribute('src', 'http://localhost:2000/static/js/submit.js');document.body.appendChild(jsCode);}());">prova bookmarklet POST</a>
+  </body>
+</html>
