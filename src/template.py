@@ -1,35 +1,30 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+webr1 = """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <title>NewsPrint Web Reader</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="epubjs/css/epubjs.css" ></link>
-    <link type="text/css" href="epubjs/css/ui-lightness/jquery-ui-1.7.1.custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/epubjs/css/epubjs.css" ></link>
+    <link type="text/css" href="/static/epubjs/css/ui-lightness/jquery-ui-1.7.1.custom.css" rel="stylesheet" />
 
     <script type="text/javascript">
 
-      function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-      }
+      var epub_dir = """
 
-      var epub_dir = getParameterByName('epub');
+webr2 = """;
     </script>
-    <script type="text/javascript" src="epubjs/jquery-1.3.2.min.js"></script>
-    <script type="text/javascript" src="epubjs/jquery-ui-1.7.1.custom.min.js"></script>
-    <script type="text/javascript" src="epubjs/mousewheel.js"></script>
-    <script type="text/javascript" src="epubjs/epubjs.js"></script>
+    <script type="text/javascript" src="/static/epubjs/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="/static/epubjs/jquery-ui-1.7.1.custom.min.js"></script>
+    <script type="text/javascript" src="/static/epubjs/mousewheel.js"></script>
+    <script type="text/javascript" src="/static/epubjs/epubjs.js"></script>
 
     <!-- styles needed by jScrollPane - include in your own sites -->
-    <link type="text/css" href="jspane/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+    <link type="text/css" href="/static/jspane/jquery.jscrollpane.css" rel="stylesheet" media="all" />
     <!-- latest jQuery direct from google's CDN -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <!-- the mousewheel plugin -->
-    <script type="text/javascript" src="jspane/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="/static/jspane/jquery.mousewheel.js"></script>
     <!-- the jScrollPane script -->
-    <script type="text/javascript" src="jspane/jquery.jscrollpane.min.js"></script>
+    <script type="text/javascript" src="/static/jspane/jquery.jscrollpane.min.js"></script>
 
     <script type="text/javascript">
       jQuery(function($)
@@ -53,7 +48,7 @@
   </head>
   <body>
     <div class="topbar">
-      <img src="http://localhost:2000/static/img/book_small.png" class="logo"><span class="topbar_title">NewsPrint</span>
+      <img src="/static/img/book_small.png" class="logo"><span class="topbar_title">NewsPrint</span>
     </div>
     <div id="book" class="clear">
       <div id="toc-container"><ol id="toc"></ol></div>
@@ -68,4 +63,4 @@
     <p>Available from <a href="http://code.google.com/p/epub-tools/source/browse/#svn/trunk/epubtools/epubjs">Google Code</a></p>
     </div>-->
   </body>
-</html>
+</html>"""
