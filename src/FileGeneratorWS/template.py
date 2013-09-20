@@ -48,7 +48,21 @@ webr2 = """;
   </head>
   <body>
     <div class="topbar">
-      <img src="/static/img/book_small.png" class="logo"><span class="topbar_title">NewsPrint</span>
+      <img src="/static/img/book_small.png" class="logo">
+      <span class="topbar_title">NewsPrint</span>
+      <a href="#"
+        onclick="
+          window.open(
+             'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+             'facebook-share-dialog',
+             'width=626,height=436');
+          return false;">
+        <img src="/static/img/share.svg" class="share_button">
+      </a>
+      <a href="/epub/"""
+
+webr3 = """"><img src="/static/img/download_bk.svg" class="dl_button"></a>
+      <span class="topbar_logout"><a class="topbar_link" href="http://localhost:2000/logout">Logout</a></span>
     </div>
     <div id="book" class="clear">
       <div id="toc-container"><ol id="toc"></ol></div>

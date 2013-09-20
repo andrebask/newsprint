@@ -12,6 +12,7 @@ Link
     site Text
     user Text
     saved UTCTime
+    UniqueLink url user
     deriving Show
     deriving Generic
 
@@ -21,6 +22,7 @@ Feed
     site Text
     read UTCTime
     user Text
+    UniqueFeed url user
     deriving Show
     deriving Generic
 

@@ -49,6 +49,13 @@
 	  <td></td>
 	</tr>
 	<tr>
+	  <td>POST</td>
+	  <td>/update/*sessionid*</td>
+	  <td>update last read date for a RSS feed</td>
+	  <td>url and UTC time</td>
+	  <td></td>
+	</tr>
+	<tr>
 	  <td>GET</td>
 	  <td>/links/*sessionid*</td>
 	  <td>get the list of web pages saved by the user</td>
@@ -64,7 +71,5 @@
 	</tr>
       </table>
     </div>
-    <a href="javascript:try{var req = new XMLHttpRequest();req.open('GET', document.location, false);req.send(null);var header = req.getResponseHeader('content-type').toLowerCase();location.href='http://localhost:3000/submit?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href)+'&content='+header;}catch(err){location.href='http://localhost:2000/submit?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href)+'&content=null';}">prova bookmarklet GET</a>
-    <a href="javascript:(function () {var jsCode = document.createElement('script');jsCode.setAttribute('src', 'http://localhost:2000/static/js/submit.js');document.body.appendChild(jsCode);}());">prova bookmarklet POST</a>
   </body>
 </html>

@@ -26,6 +26,7 @@ library
                      Handler.Link
                      Handler.Delete
                      Handler.Submit
+                     Handler.UpdateFeed
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT

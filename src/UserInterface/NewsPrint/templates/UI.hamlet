@@ -2,6 +2,7 @@
  <title>NewsPrint
  <meta charset="UTF-8">
  <link href="http://localhost:2000/static/css/app.css" rel="stylesheet">
+ <script src="http://code.jquery.com/jquery-1.10.2.min.js">
 <body #newsprint .body>
  <div .topbar>
   <img src="http://localhost:2000/static/img/book_small.png" .logo>
@@ -23,7 +24,8 @@
        <div .item_site><b>#{site}</b> #
        <div .item_date><b>#{show(read)}</b> #
         <input .checkbox form=feed type=checkbox name=feed value=#{url}>
-     <input type=hidden name=type value=feed>
+        <input form=feed type=hidden name=feed_date value=#{show(read)}>
+     <input form=feed type=hidden name=type value=feed>
  <div .body_forms>
    <div .forms>
      <h2>Bookmarks
@@ -43,3 +45,4 @@
      <input form=link type=hidden name=type value=link>
   <form #feed method=post>
   <form #link method=post>
+  <script src="http://localhost:2000/static/js/app.js">

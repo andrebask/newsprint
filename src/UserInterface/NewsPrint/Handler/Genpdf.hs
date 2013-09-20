@@ -12,42 +12,39 @@ import qualified Data.ByteString.Lazy as BL
 import Data.Text.Encoding
 import Data.Text
 import Data.Time
-
-data Link = Link {
-       link :: Text
-     } deriving (Show, Generic)
-
-data LinkArray = LinkArray {
-       links :: [Link]
-     } deriving (Show, Generic)
-
-instance ToJSON Link
-instance ToJSON LinkArray
+import Handler.Genepub hiding (submitItems)
 
 postGenpdfR :: Handler ()
 postGenpdfR = do itemType <- runInputPost $ ireq hiddenField "type"
                  items <- runInputPost $ ireq selectionField itemType
+                 dates <- case itemType of
+                            "link" -> return []
+                            "feed" -> runInputPost $ ireq selectionField "feed_date"
                  let path = case itemType of
                               "link" -> "/page"
                               "feed" -> "/rss"
                  filename <- lift $ withConnection (openConnection "127.0.0.1" 8080)
-                                                   (submitItems items path)
+                                                   (submitItems items dates path)
                  case filename of
-                   Just f -> do addHeader "Location" $ append "http://localhost:8080/pdf/" f
+                   Just f -> do _ <- case itemType of
+                                        "feed" -> updateFeedTime items
+                                        _ -> return ()
+                                addHeader "Location" $ append "http://localhost:8080/pdf/" f
                                 sendResponseStatus status303 ("" :: Text)
                    Nothing  -> redirect SessionR
                    _  -> redirect HomeR
 
-submitItems :: [Text] -> B.ByteString -> Connection -> IO (Maybe Text)
-submitItems items path conn =
-    do laBS <- return (encode (LinkArray {links = [Link url | url <- items]}))
+submitItems :: [Text] -> [Text] -> B.ByteString -> Connection -> IO (Maybe Text)
+submitItems items dates path conn =
+    do laBS <- case dates of
+                 (x:xs) -> return (encode (LinkArray {links = [Link url lread | url <- items, lread <- dates]}))
+                 [] -> return (encode (LinkArray {links = [Link url "" | url <- items]}))
        is <- S.fromLazyByteString laBS
        len <- return $ BL.length laBS
 
        q <- buildRequest $ do
               http POST $ B.append path "/pdf"
               setContentType "application/json"
-              -- setAccept "application/json"
               setContentLength len
 
        sendRequest conn q (inputStreamBody is)
@@ -57,16 +54,4 @@ submitItems items path conn =
                                case stream of
                                  Just bytes -> return $ Just $ decodeUtf8 bytes
                                  Nothing    -> return Nothing)
-
-selectionField :: Field Handler [Text]
-selectionField = Field
-    { fieldParse = \rawVals _fileVals ->
-        case rawVals of
-          [] -> return $ Right Nothing
-          (x:xs) -> return $ Right $ Just rawVals
-          _ -> return $ Left "Error"
-    , fieldView = \idAttr nameAttr otherAttrs eResult isReq ->
-        [whamlet||]
-    , fieldEnctype = UrlEncoded
-    }
 

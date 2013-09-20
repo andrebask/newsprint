@@ -44,6 +44,11 @@ html,body {
     padding: 10px;
 }
 
+.topbar_logout > a:visited, a:link {
+    color: white;
+    text-decoration: none;
+}
+
 .logo {
     padding: 3px;
     left: 16.5px;
@@ -201,3 +206,20 @@ form_left_title {
     float: right;
 }
 
+.loading_div {
+    position: fixed;
+    top:0%;
+    left:0%;
+    right:0%;
+    bottom:0%;
+    background-color: #6c6d6f;
+    text-align: center;
+    opacity: 0.8;
+    z-index: 1000;
+}
+
+.loading_text {
+    margin-top: 30%;
+    color: white;
+    font-size: 15pt;
+}

@@ -6,38 +6,35 @@ from rsstoebook.EPubData import EPubGenerator
 from rsstoebook.PDFData import PDFGenerator
 from rsstoebook.ArticleData import ArticleExtractor
 from bottle import Bottle, post, request, static_file, run, template
-from template import webr1, webr2
+from template import webr1, webr2, webr3
 from time import time
-import os
+from datetime import datetime
+import os, logging
 
 version = '0.0.1'
 np = Bottle()
-web_reader_path = '/home/andrebask/Programmazione/Projects/NewsPrint/Code/src/ui/web-reader'
+web_reader_path = '/home/andrebask/Programmazione/Projects/NewsPrint/Code/src/UserInterface/web-reader'
 
-@np.post('/opml/<format:re:epub|pdf>')
-def opml(format):
-    try:
-        opml_files = save_files(request)
-    except:
-        return 'File extension not allowed.'
-    feeds_urls = []
-    for o in opml_files:
-        feeds_urls + OPMLReader(o).get_feeds_urls()
-    feeds = RSSManager(feeds_urls).download_feeds()
-    down_feeds = FeedManager(feeds).get_downloaded_feeds()
-    return output(format, down_feeds)
+logging.getLogger('').handlers = []
+
+logging.basicConfig(
+    filename = "test.log",
+    filemode="w",
+    level = logging.DEBUG)
+logging.debug('Logging enabled')
 
 @np.post('/rss/<format:re:epub|pdf>')
 def rss(format):
-    feeds_urls = [l[u'link'] for l in request.json[u'links']]
+    print request.json[u'links']
+    feeds_urls = [(l[u'link'], l[u'date']) for l in request.json[u'links']]
     feeds = RSSManager(feeds_urls).download_feeds()
     down_feeds = FeedManager(feeds).get_downloaded_feeds()
     return output(format, down_feeds)
 
 @np.post('/page/<format:re:epub|pdf>')
 def page(format):
-    print str(request.json)
-    items = [{'link': l[u'link']} for l in request.json[u'links']]
+    items = [{'link': str(l[u'link'])} for l in request.json[u'links']]
+    print items
     articles = []
     for item in items:
         articles.append(ArticleExtractor().get_article_from_item(item))
@@ -47,7 +44,11 @@ def page(format):
 
 @np.get('/pdf/<filename:path>')
 def pdf(filename):
-    return static_file(filename, root="/tmp")
+    return static_file(filename, root='/tmp')
+
+@np.get('/epub/<filename:path>')
+def pdf(filename):
+    return static_file(filename, root='/tmp')
 
 @np.get('/static/<filename:path>')
 def send_static(filename):
@@ -59,9 +60,11 @@ def images(filename):
 
 @np.get('/webreader/<filename:path>')
 def webreader(filename):
-    os.system("cd " + web_reader_path + " && " + "bash " + web_reader_path + '/' + "extract_epub" + " /tmp/" + filename)
     fname = filename.split('.')[0]
-    return webr1 + '\'/static/' + fname + '\'' + webr2
+    if not os.path.exists(web_reader_path + '/' + fname):
+        os.system("cd " + web_reader_path + " && " +
+                  "bash " + web_reader_path + '/' + "extract_epub" + " /tmp/" + filename)
+    return webr1 + '\'/static/' + fname + '\'' + webr2 + filename + webr3
 
 def output(format, down_feeds):
     name = str(int(time()*1000000))

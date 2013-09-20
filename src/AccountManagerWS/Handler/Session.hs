@@ -75,6 +75,7 @@ clean salt = filter
              (\c -> case c of
                       '\\' -> False
                       '\"' -> False
+                      '/' -> False
                       '=' -> False
                       '?' -> False
                       '|' -> False
