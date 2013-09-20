@@ -1,0 +1,24 @@
+.nsbutton {
+    background: none repeat scroll 0 0 #E0E0E0;
+    margin: 100px;
+    padding: 52px;
+    text-align: center;
+    border-color: grey;
+    border-radius: 10px 10px 10px 10px;
+    border-style: solid;
+}
+#nsbutton {
+    background: url("../img/nsbutton.png") no-repeat scroll 0 0 / 100% 100% transparent;
+    border: medium none;
+    display: inline-block;
+    height: 88px;
+    text-decoration: none;
+    text-indent: -10000px;
+    width: 260px;
+}
+.dragthis {
+    color: #666666;
+    font-family: Medium;
+    font-size: 20px;
+    margin-top: 20px;
+}
