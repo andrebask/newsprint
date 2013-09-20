@@ -1,9 +1,9 @@
 Default: &defaults
-  user: none
-  password: none
+  user: newsprint
+  password: 7ts46tLSYUdUvxmxmBTdzn1uwgV8qcn5
   host: localhost
   port: 3306
-  database: none
+  database: NewsPrint
   poolsize: 10
 
 Development:

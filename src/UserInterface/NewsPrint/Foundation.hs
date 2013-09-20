@@ -120,11 +120,11 @@ instance Yesod App where
     makeLogger = return . appLogger
 
 -- How to run database actions.
-instance YesodPersist App where
-    type YesodPersistBackend App = SqlPersistT
-    runDB = defaultRunDB persistConfig connPool
-instance YesodPersistRunner App where
-    getDBRunner = defaultGetDBRunner connPool
+-- instance YesodPersist App where
+--     type YesodPersistBackend App = SqlPersistT
+--     runDB = defaultRunDB persistConfig connPool
+-- instance YesodPersistRunner App where
+--     getDBRunner = defaultGetDBRunner connPool
 
 -- instance YesodAuth App where
 --     type AuthId App = UserId
