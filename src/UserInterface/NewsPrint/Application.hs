@@ -62,17 +62,17 @@ makeFoundation :: AppConfig DefaultEnv Extra -> IO App
 makeFoundation conf = do
     manager <- newManager def
     s <- staticSite
-    dbconf <- withYamlEnvironment "config/mysql.yml" (appEnv conf)
-              Database.Persist.loadConfig >>=
-              Database.Persist.applyEnv
-    p <- Database.Persist.createPoolConfig (dbconf :: Settings.PersistConf)
+    -- dbconf <- withYamlEnvironment "config/mysql.yml" (appEnv conf)
+    --           Database.Persist.loadConfig >>=
+    --           Database.Persist.applyEnv
+    -- p <- Database.Persist.createPoolConfig (dbconf :: Settings.PersistConf)
     logger <- mkLogger True stdout
-    let foundation = App conf s p manager dbconf logger
+    let foundation = App conf s manager logger
 
     -- Perform database migration using our application's logging settings.
-    runLoggingT
-        (Database.Persist.runPool dbconf (runMigration migrateAll) p)
-        (messageLoggerSource foundation logger)
+    -- runLoggingT
+    --     (Database.Persist.runPool dbconf (runMigration migrateAll) p)
+    --     (messageLoggerSource foundation logger)
 
     return foundation
 
