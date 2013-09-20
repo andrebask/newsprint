@@ -62,9 +62,9 @@ def images(filename):
 def webreader(filename):
     fname = filename.split('.')[0]
     if not os.path.exists(web_reader_path + '/' + fname):
-        os.system("cd " + web_reader_path + " && " +
-                  "bash " + web_reader_path + '/' + "extract_epub" + " /tmp/" + filename)
-    return webr1 + '\'/static/' + fname + '\'' + webr2 + filename + webr3
+        os.system("cd " + web_reader_path + '/' + "data" + " && " +
+                  "bash " + web_reader_path + '/' + "data" + '/' + "extract_epub" + " /tmp/" + filename)
+    return webr1 + '\'/static/' + "data/" + fname + '\'' + webr2 + filename + webr3
 
 def output(format, down_feeds):
     name = str(int(time()*1000000))
