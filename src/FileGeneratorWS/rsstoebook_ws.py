@@ -45,11 +45,11 @@ def page(format):
 
 @np.get('/pdf/<filename:path>')
 def pdf(filename):
-    return static_file(filename, root='/tmp')
+    return static_file(filename, root='/tmp', mimetype='application/pdf')
 
 @np.get('/epub/<filename:path>')
 def pdf(filename):
-    return static_file(filename, root='/tmp')
+    return static_file(filename, root='/tmp', mimetype='application/epub+zip')
 
 @np.get('/static/<filename:path>')
 def send_static(filename):
