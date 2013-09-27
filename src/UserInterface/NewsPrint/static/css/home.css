@@ -155,3 +155,7 @@ form_left_title {
     margin-right: 0.5em;
     border-style: solid;
 }
+
+.success {
+    font-size: 1.2em;
+}

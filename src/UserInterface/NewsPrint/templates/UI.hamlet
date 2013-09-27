@@ -45,4 +45,5 @@
      <input form=link type=hidden name=type value=link>
   <form #feed method=post>
   <form #link method=post>
+  <input #refreshed type=hidden value=no>
   <script src="http://localhost:2000/static/js/app.js">

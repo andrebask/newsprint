@@ -13,10 +13,13 @@ import Data.Text.Encoding
 import Data.Text
 import Data.Time
 import Handler.Genepub hiding (submitItems)
+import Control.Exception (SomeException)
+import Control.Exception.Lifted (catch)
 
 postGenpdfR :: Handler ()
 postGenpdfR = do itemType <- runInputPost $ ireq hiddenField "type"
-                 items <- runInputPost $ ireq selectionField itemType
+                 items <- catch (do runInputPost $ ireq selectionField itemType)
+                                (\(e :: SomeException) -> redirect SessionR)
                  dates <- case itemType of
                             "link" -> return []
                             "feed" -> runInputPost $ ireq selectionField "feed_date"

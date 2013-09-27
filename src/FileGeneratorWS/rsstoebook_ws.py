@@ -10,10 +10,11 @@ from template import webr1, webr2, webr3
 from time import time
 from datetime import datetime
 import os, logging
+import os.path as op
 
 version = '0.0.1'
 np = Bottle()
-web_reader_path = '/home/andrebask/Programmazione/Projects/NewsPrint/Code/src/UserInterface/web-reader'
+web_reader_path = op.join(op.dirname(op.abspath(__file__)), 'web-reader')
 
 logging.getLogger('').handlers = []
 

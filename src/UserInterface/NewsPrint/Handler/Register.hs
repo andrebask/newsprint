@@ -44,7 +44,7 @@ postRegisterR = do email <- runInputPost $ ireq textField "email"
                                                     (sendUserData email user pwdbs)
                         case sc of
                           Just 200 -> do setSession "user" user
-                                         redirectUltDest SessionR
+                                         sendFile "text/html" "static/home_ok.html"
                           Nothing  -> redirect HomeR
                       else do
                         redirect HomeR
