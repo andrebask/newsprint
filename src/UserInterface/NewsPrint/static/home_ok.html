@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>NewsPrint</title>
+    <style>@import "http://localhost:2000/static/css/home.css";</style>
+    <style>@import "http://localhost:2000/static/css/bookmarklet.css";</style>
+    <script type="text/javascript" src="http://localhost:2000/static/js/app.js"></script>
+  </head>
+  <body id="newsprint">
+    <div class="topbar">
+      <img src="http://localhost:2000/static/img/book_small.png" class="logo"><span class="topbar_title">NewsPrint</span>
+    </div>
+    <div class="body_text">
+      <div class="title">
+	<h1>Welcome</h1>
+      </div>
+      <div class="text">
+	NewsPrint allows you to save on the cloud your favorite web contents and convert them to a format suitable for printing or reading on your ebook reader. With NewsPrint you can also read your favorite RSS feeds in EPUB or PDF format.
+      </div>
+      <div class="nsbutton">
+
+	<a title="NewsPrint Add Bookmarklet" href="javascript:(function () {var jsCode = document.createElement('script');jsCode.setAttribute('src', 'http://localhost:2000/static/js/submit.js');document.body.appendChild(jsCode);}());" id="nsbutton"><span>NewsPrint Add</span></a>
+
+        <div class="dragthis">Step 1: Drag this icon on the bookmarks toolbar</div>
+      </div>
+    </div>
+    <div class="body_forms">
+      <div class="forms">
+	<form name="register" action="/register" class="form_left" method="post">
+          <h3 class="form_left_title">Step 2: Sign up</h3>
+          <div class="success">
+            Succesfully signed up. </br> Please sign in.
+          </div>
+	</form>
+	<form name="login" action="/session" class="form_right" method="post">
+          <h3 class="form_right_title">Step 3: Sign in</h3>
+          <input name="user" type="text" placeholder="username" class="input r">
+          <input name="pwd" type="password" placeholder="password" class="input r pwd">
+          <div class="button_layout_right">
+            <input class="button_right" type="submit" value="Sign in">
+          </div>
+	</form>
+      </div>
+    </div>
+  </body>
+</html>
