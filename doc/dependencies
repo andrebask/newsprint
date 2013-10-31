@@ -3,3 +3,5 @@ libmysqlclient-dev
 libicu-dev
 libssl-dev
 libcrypto++-dev
+
+rsstoebook
