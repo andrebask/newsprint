@@ -4,4 +4,4 @@ libicu-dev
 libssl-dev
 libcrypto++-dev
 
-rsstoebook
+rsstoebook (https://github.com/andrebask/rsstoebook)
