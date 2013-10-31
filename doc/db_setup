@@ -1,6 +1,6 @@
 mysql -u root -p
 
-CREATE USER 'newsprint'@'localhost' IDENTIFIED BY '7ts46tLSYUdUvxmxmBTdzn1uwgV8qcn5';
+CREATE USER 'newsprint'@'localhost' IDENTIFIED BY '<yourpassword>';
 
 GRANT ALL PRIVILEGES ON * . * TO 'newsprint'@'localhost;
 

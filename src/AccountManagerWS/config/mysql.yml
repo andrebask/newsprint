@@ -1,6 +1,6 @@
 Default: &defaults
   user: newsprint
-  password: 7ts46tLSYUdUvxmxmBTdzn1uwgV8qcn5
+  password: yourpassword
   host: localhost
   port: 3306
   database: NewsPrintAM
